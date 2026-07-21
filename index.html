@@ -1,0 +1,312 @@
+The filename `index.html` is correct.
+
+Step 22: Paste the complete landing-page code below into the editor. Do not commit yet.
+
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta
+    name="description"
+    content="Day Grid is a private, offline-first planner for tasks, habits, focus, and progress."
+  >
+  <title>Day Grid — Plan clearly. Focus privately.</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --background: #f7f5ff;
+      --surface: rgba(255, 255, 255, 0.84);
+      --text: #202124;
+      --muted: #686775;
+      --primary: #6255d9;
+      --primary-dark: #493bb9;
+      --border: rgba(70, 60, 130, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 15%, rgba(255, 193, 92, 0.28), transparent 34%),
+        radial-gradient(circle at 85% 18%, rgba(112, 92, 230, 0.25), transparent 36%),
+        linear-gradient(145deg, #fffaf0, var(--background));
+    }
+
+    main {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text);
+      font-size: 1.1rem;
+      font-weight: 750;
+      text-decoration: none;
+    }
+
+    .mark {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      color: white;
+      background: linear-gradient(145deg, var(--primary), #8276ec);
+      border-radius: 13px;
+      box-shadow: 0 9px 24px rgba(98, 85, 217, 0.28);
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 56px;
+      align-items: center;
+      min-height: 610px;
+      padding: 64px 0 96px;
+    }
+
+    .eyebrow {
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 720px;
+      margin: 18px 0 22px;
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+    }
+
+    .intro {
+      max-width: 650px;
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.28rem);
+      line-height: 1.7;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      min-height: 48px;
+      padding: 0 22px;
+      color: white;
+      font-weight: 750;
+      text-decoration: none;
+      background: var(--primary);
+      border-radius: 999px;
+      box-shadow: 0 10px 26px rgba(98, 85, 217, 0.25);
+    }
+
+    .button:hover {
+      background: var(--primary-dark);
+    }
+
+    .button.secondary {
+      color: var(--primary);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: none;
+    }
+
+    .preview {
+      padding: 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      box-shadow: 0 24px 70px rgba(44, 38, 86, 0.14);
+      backdrop-filter: blur(18px);
+    }
+
+    .preview h2 {
+      margin: 0 0 20px;
+    }
+
+    .feature {
+      padding: 18px;
+      margin-top: 12px;
+      background: rgba(98, 85, 217, 0.08);
+      border-radius: 18px;
+    }
+
+    .feature strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .feature span {
+      color: var(--muted);
+    }
+
+    .privacy-note {
+      padding: 26px;
+      margin-bottom: 70px;
+      text-align: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+    }
+
+    .privacy-note h2 {
+      margin-top: 0;
+    }
+
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 26px 0 38px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    footer a {
+      color: var(--primary);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #0d0e18;
+        --surface: rgba(27, 28, 41, 0.88);
+        --text: #f4f3fa;
+        --muted: #b7b4c5;
+        --primary: #a99fff;
+        --primary-dark: #8c80ef;
+        --border: rgba(190, 182, 255, 0.15);
+      }
+
+      body {
+        background:
+          radial-gradient(circle at 15% 15%, rgba(189, 112, 37, 0.2), transparent 34%),
+          radial-gradient(circle at 85% 18%, rgba(98, 85, 217, 0.26), transparent 36%),
+          var(--background);
+      }
+
+      .mark,
+      .button {
+        color: #ffffff;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        min-height: auto;
+        padding: 56px 0 72px;
+      }
+
+      h1 {
+        font-size: clamp(3rem, 15vw, 4.8rem);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <nav>
+      <a class="brand" href="/">
+        <span class="mark">DG</span>
+        <span>Day Grid</span>
+      </a>
+      <a href="/privacy">Privacy</a>
+    </nav>
+
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Private. Offline. Yours.</div>
+        <h1>Plan clearly.<br>Focus privately.</h1>
+        <p class="intro">
+          Day Grid brings tasks, habits, focus sessions, and progress insights
+          into one calm workspace. No accounts, advertisements, analytics,
+          tracking, or cloud dependency.
+        </p>
+
+        <div class="actions">
+          <span class="button">Coming soon to Google Play</span>
+          <a class="button secondary" href="/privacy">Read our privacy policy</a>
+        </div>
+      </div>
+
+      <aside class="preview">
+        <h2>Your day, thoughtfully organized.</h2>
+
+        <div class="feature">
+          <strong>Plan</strong>
+          <span>Organize tasks, priorities, due dates, and categories.</span>
+        </div>
+
+        <div class="feature">
+          <strong>Build</strong>
+          <span>Create flexible habits and follow meaningful streaks.</span>
+        </div>
+
+        <div class="feature">
+          <strong>Focus</strong>
+          <span>Use a recoverable focus timer and save local sessions.</span>
+        </div>
+
+        <div class="feature">
+          <strong>Understand</strong>
+          <span>Review progress calculated entirely from local data.</span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="privacy-note">
+      <h2>Your planning data stays on your device.</h2>
+      <p>
+        Day Grid does not operate accounts, analytics, advertising, tracking,
+        backend APIs, or cloud synchronization.
+      </p>
+      <a href="/privacy">Read the complete Privacy Policy</a>
+    </section>
+
+    <footer>
+      <span>Day Grid · Developed by MSU Agency · Published on Google Play by GlowNow</span>
+      <a href="mailto:info@glownow-app.nl">info@glownow-app.nl</a>
+    </footer>
+  </main>
+</body>
+</html>
+```
+
+Tell me when it is pasted.
